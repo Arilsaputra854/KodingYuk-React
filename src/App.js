@@ -12,8 +12,9 @@ import mrt_logo from "./assets/mrt_logo.png";
 import scratch_logo from "./assets/scratch_logo.png";
 import "./App.css";
 import "./navbar.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { isMobile as detectMobile } from "react-device-detect";
+import { TypeAnimation } from "react-type-animation";
 
 function NavBar(params) {
   const [isMobile, setIsMobile] = useState(false);
@@ -43,7 +44,34 @@ function NavBar(params) {
   );
 }
 
+const AnimatedTitle = () => {
+  return (
+      <h2 className="animated-title">
+              Gali <b>Potensi</b> Masa Depan Anak Dengan&nbsp;
+      <span className="changing-word">
+        <TypeAnimation
+          sequence={[
+            'Koding',
+            2000,     
+            'Robotik',  
+            2000,        
+          ]}
+          wrapper="span"
+          cursor={true}
+          repeat={Infinity} 
+        />
+      </span>
+    </h2>
+  );
+};
+
 const App = () => {
+  var aboutSection = useRef(null)
+
+  const scrollToAbout = ()=>{
+    aboutSection.current.scrollIntoView()
+  }  
+
   if(detectMobile){
     return <div className="App">
       <header ></header>
@@ -59,18 +87,17 @@ const App = () => {
         </header>
         <main className="App-body">
           <div className="headline">
-            <h2>
-              Gali <b>Potensi</b> Masa Depan Anak Dengan <b>Koding & Robotik</b>
-            </h2>
+            <AnimatedTitle/>
+            
             <h3 id="caption">
               Belajar koding dan robotik dengan cara menyenangkan, interaktif, dan
               relevan untuk anak-anak dan remaja.
             </h3>
-            <h3 id="cek-button">Cek Sekarang!</h3>
+            <h3 id="cek-button" onClick={scrollToAbout}>Cek Sekarang!</h3>
           </div>
           <img src={woman} alt="Woman" id="woman_photo"></img>
         </main>
-        <main className="App-about">
+        <main className="App-about" ref={aboutSection}>
           <h2>Tentang KodingYuk!</h2>
   
           <p>
@@ -165,6 +192,21 @@ const App = () => {
               Kelas dilakukan secara online menggunakan platform online (Google Meet atau Zoom), memungkinkan siswa belajar dari rumah dengan bimbingan langsung dari instruktur, kapanpun dan dimanapun.
               </p>
             </div>
+          </div>
+        </main>
+        <main className="App-registration">
+          <h2>Tertarik?</h2>
+          <p>Daftar sekarang dan mulai petualangan seru buat mengasah kreativitas, logika, dan skill teknologi anak ayah dan bunda!</p>
+         
+          <div className="button">
+            <a href="https://forms.gle/6Vx2F6suzEEk4PHU6">Daftar Sekarang!</a>
+          </div>
+
+          <div className="footer">
+            <ul>
+              <a href="https://www.instagram.com/kodingyuk.id/"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61565772189737"><i className="fab fa-facebook-f"></i></a>
+            </ul>
           </div>
         </main>
       </div>
