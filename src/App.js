@@ -13,8 +13,9 @@ import scratch_logo from "./assets/scratch_logo.png";
 import "./App.css";
 import "./navbar.css";
 import { useRef, useState } from "react";
-import { isMobile as detectMobile } from "react-device-detect";
 import { TypeAnimation } from "react-type-animation";
+import { isMobile, isTablet } from "react-device-detect";
+import { useMediaQuery } from "react-responsive";
 
 function NavBar(params) {
   const [isMobile, setIsMobile] = useState(false);
@@ -28,10 +29,10 @@ function NavBar(params) {
         onClick={() => setIsMobile(false)}
       >
         <li>
-          <a href="#home">Home</a>
-          <a href="#kelas">Kelas</a>
-          <a href="#about">About</a>
-          <a href="#e-course">E-Course</a>
+          <a href="/">Home</a>
+          <a href="/kelas">Kelas</a>
+          <a href="/about">About</a>
+          <a href="/blog">Blog</a>
         </li>
       </ul>
       <button
@@ -47,7 +48,8 @@ function NavBar(params) {
 const AnimatedTitle = () => {
   return (
       <h2 className="animated-title">
-              Gali <b>Potensi</b> Masa Depan Anak Dengan&nbsp;
+              Gali <b>Potensi</b> Masa Depan Anak Dengan
+              <br></br>
       <span className="changing-word">
         <TypeAnimation
           sequence={[
@@ -68,16 +70,137 @@ const AnimatedTitle = () => {
 const App = () => {
   var aboutSection = useRef(null)
 
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 767px)' })
+
   const scrollToAbout = ()=>{
     aboutSection.current.scrollIntoView()
   }  
 
-  if(detectMobile){
-    return <div className="App">
-      <header ></header>
-      <main>
-        <center><h1>Mobile Website in Development, please use Desktop</h1></center>
-      </main>
+
+  if(isTabletOrMobile){
+    return <div className="App-mobile">
+      <header className="App-header-mobile">
+          <NavBar />
+        </header>
+        <main className="App-body-mobile">
+          <div className="headline-mobile">
+            
+            <AnimatedTitle/>
+            <h3 id="caption-mobile">
+              Belajar koding dan robotik dengan cara menyenangkan, interaktif, dan
+              relevan untuk anak-anak dan remaja.
+            </h3>
+            <h3 id="cek-button-mobile" onClick={scrollToAbout}>Cek Sekarang!</h3>
+          </div>
+          <img src={woman} alt="Woman" id="woman_photo_mobile"></img>
+        </main>
+        <main className="App-about-mobile" ref={aboutSection}>
+          <h2>Tentang KodingYuk!</h2>
+  
+          <p>
+            Kodingyuk merupakan kursus koding dan robotik yang berfokus pada
+            menggali potensi anak dalam bidang teknologi. Kodingyuk membantu
+            anak-anak memahami konsep teknologi secara mendalam, mempersiapkan
+            mereka untuk menghadapi tantangan di masa depan.
+          </p>
+          <div className="foto-murid-mobile">
+            <div className="foto-murid-polaroid">
+              <img src={picture3} alt="foto siswa" id="foto3"></img>
+              <img src={picture1} alt="foto siswa" id="foto1"></img>
+            </div>
+          </div>
+        </main>
+        <main className="App-reason-mobile">
+          <div className="list-reason-mobile">
+            <h2>Kenapa pilih KodingYuk?</h2>
+            <ul>
+              <li>Kurikulum Mudah Dipahami:</li>
+              <p>
+                Kurikulum kami dirancang agar mudah dipahami oleh anak-anak,
+                sehingga mereka dapat belajar dengan lebih efektif dan
+                menyenangkan.
+              </p>
+              <li>Kesempatan Lomba Nasional & Internasional: </li>
+              <p>
+                Siswa memiliki kesempatan untuk mengikuti lomba-lomba di tingkat
+                nasional maupun internasional, memperluas wawasan dan pengalaman.
+              </p>
+              <li>Trainer Berpengalaman: </li>
+              <p>
+                Trainer kami adalah profesional yang berpengalaman dalam
+                bidangnya, siap membimbing siswa hingga mencapai tujuan
+                pembelajaran.
+              </p>
+              <li>Projek Akhir yang Aplikatif:</li>
+              <p>
+                Siswa akan membuat projek akhir yang dapat diaplikasikan langsung
+                dalam kehidupan sehari-hari, memberikan pengalaman praktis yang
+                berharga.
+              </p>
+            </ul>
+          </div>
+        </main>
+        <main className="App-program-mobile">
+          <h2>Program Kami</h2>
+          <div className="list-program-mobile">
+            <div className="kelas-merakit-mobile">
+              <img src={mrt_logo} alt="logo MRT"></img>
+              <h2>Kelas Merakit Robot</h2>
+              <p>
+                Program ini mengajak anak-anak merakit robot dengan blok MRT,
+                meningkatkan logika, kreativitas, dan keterampilan motorik halus.
+              </p>
+            </div>
+            <div className="kelas-animasi-mobile">
+              <img src={scratch_logo} alt="logo scratch"></img>
+              <h2>Kelas Animasi Robotik</h2>
+              <p>
+              Scratch adalah platform visual yang ramah anak untuk belajar coding, memungkinkan mereka membuat game interaktif dengan kode blok yang mudah dipahami.
+              </p>
+            </div>
+            <div className="kelas-python-mobile">
+              <img src={python_logo} alt="logo python"></img>
+              <h2>Kelas Koding</h2>
+              <p>
+              Kelas belajar Python adalah program untuk mempelajari dasar-dasar pemrograman Python, termasuk sintaks, struktur data, dan pembuatan proyek sederhana.
+              </p>
+            </div>
+          </div>
+        </main>
+        <main className="App-method-mobile">
+          <h2>Metode Pembelajaran</h2>
+          <div className="list-method-mobile">
+            <div className="kelas-offline-mobile">
+              <img src={picture6} alt="logo scratch"></img>
+              <h2>PRIVAT</h2>
+              <p>
+              Trainer akan datang ke rumah siswa untuk memberikan pembelajaran, memungkinkan bimbingan langsung dan maksimal saat siswa menghadapi kesulitan.
+              </p>
+            </div>
+            <div className="kelas-online-mobile">
+              <img src={picture7} alt="logo python"></img>
+              <h2>ONLINE</h2>
+              <p>
+              Kelas dilakukan secara online menggunakan platform online (Google Meet atau Zoom), memungkinkan siswa belajar dari rumah dengan bimbingan langsung dari instruktur, kapanpun dan dimanapun.
+              </p>
+            </div>
+          </div>
+        </main>
+        <main className="App-registration">
+          <h2>Tertarik?</h2>
+          <p>Daftar sekarang dan mulai petualangan seru buat mengasah kreativitas, logika, dan skill teknologi anak ayah dan bunda!</p>
+         
+          <div className="button-mobile">
+            <a href="https://forms.gle/6Vx2F6suzEEk4PHU6">Daftar Sekarang!</a>
+          </div>
+
+          <div className="footer">
+            <ul>
+              <a href="https://www.instagram.com/kodingyuk.id/"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61565772189737"><i className="fab fa-facebook-f"></i></a>
+            </ul>
+          </div>
+        </main>
     </div>;
   }else{
     return (
