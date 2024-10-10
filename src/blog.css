@@ -1,0 +1,17 @@
+.blog{
+    margin: 1%;
+}
+
+.blog h1{
+    color: yellow;
+    text-align: center;
+    font-size: 5vw;
+}
+
+.blog-post{
+    background-color: rgba(255, 255, 255, 0.105);
+    border-radius: 20px;
+    padding: 1%;
+    margin: 1%;
+    cursor: pointer;
+}
