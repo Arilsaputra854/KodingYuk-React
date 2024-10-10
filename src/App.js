@@ -4,7 +4,6 @@ import picture1 from "./assets/picture_1.png";
 import picture2 from "./assets/picture_2.png";
 import picture3 from "./assets/picture_3.png";
 import picture4 from "./assets/picture_4.png";
-import picture5 from "./assets/picture_5.png";
 import picture6 from "./assets/picture_6.png";
 import picture7 from "./assets/picture_7.png";
 import pythonLogo from "./assets/python_logo.png";
