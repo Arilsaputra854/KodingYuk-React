@@ -4,8 +4,10 @@ import picture1 from "./assets/picture_1.png";
 import picture2 from "./assets/picture_2.png";
 import picture3 from "./assets/picture_3.png";
 import picture4 from "./assets/picture_4.png";
+import picture5 from "./assets/picture_5.png";
 import picture6 from "./assets/picture_6.png";
 import picture7 from "./assets/picture_7.png";
+import picture9 from "./assets/picture_9.png";
 import pythonLogo from "./assets/python_logo.png";
 import mrtLogo from "./assets/mrt_logo.png";
 import scratchLogo from "./assets/scratch_logo.png";
@@ -75,7 +77,7 @@ const App = () => {
       <header className="App-header-mobile">
         <NavBar />
       </header>
-      <Routes>
+      <Routes basename="/docs">
         <Route
           path="/"
           element={
@@ -91,7 +93,9 @@ const App = () => {
                     Cek Sekarang!
                   </h3>
                 </div>
-                <img src={woman} alt="Woman" id="woman_photo_mobile" />
+                <div className="woman_photo_mobile">
+                  <img src={woman} alt="Woman" />
+                </div>
               </main>
               <main className="App-about-mobile" ref={aboutSection}>
                 <h2>Tentang KodingYuk!</h2>
@@ -102,10 +106,7 @@ const App = () => {
                   mempersiapkan mereka untuk menghadapi tantangan di masa depan.
                 </p>
                 <div className="foto-murid-mobile">
-                  <div className="foto-murid-polaroid">
-                    <img src={picture3} alt="foto siswa" id="foto3" />
-                    <img src={picture1} alt="foto siswa" id="foto1" />
-                  </div>
+                 <img src={picture9} alt="foto siswa" />
                 </div>
               </main>
               <main className="App-reason-mobile">
@@ -176,7 +177,7 @@ const App = () => {
                   </div>
                 </div>
               </main>
-              <main className="App-registration">
+              <main className="App-registration-mobile">
                 <h2>Tertarik?</h2>
                 <p>
                   Daftar sekarang dan mulai petualangan seru buat mengasah
@@ -232,14 +233,13 @@ const App = () => {
                 <h2>Tentang KodingYuk!</h2>
                 <p>
                   Kodingyuk merupakan kursus koding dan robotik yang berfokus
-                  pada menggali potensi anak dalam bidang teknologi.
+                  pada menggali potensi anak dalam bidang teknologi.  Kodingyuk membantu anak-anak memahami konsep teknologi secara mendalam, mempersiapkan mereka untuk menghadapi tantangan di masa depan.
                 </p>
                 <div className="foto-murid">
                   <img src={picture4} alt="foto siswa" id="foto4" />
-                  <div className="foto-murid-polaroid">
-                    <img src={picture3} alt="foto siswa" id="foto3" />
-                    <img src={picture1} alt="foto siswa" id="foto1" />
-                  </div>
+
+                  <img src={picture9} alt="foto siswa" id="foto9" />
+                  
                   <img src={picture2} alt="foto siswa" id="foto2" />
                 </div>
               </main>
@@ -266,9 +266,13 @@ const App = () => {
                     <p>
                       Siswa akan membuat projek akhir yang dapat diaplikasikan
                       langsung dalam kehidupan sehari-hari.
+                    
                     </p>
                   </ul>
                 </div>
+                 <div className="foto-pemenang">
+                    <img src={picture5} alt="Picture 5" />
+                 </div>
               </main>
               <main className="App-program">
                 <h2>Program Kami</h2>
