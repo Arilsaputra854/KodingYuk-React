@@ -17,14 +17,14 @@ import { useRef, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Blog from "./blog.js";
 import { useMediaQuery } from "react-responsive";
-import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
+import { Route, HashRouter as Router, Routes, Link } from "react-router-dom";
 
 function NavBar() {
   const [isMobile, setIsMobile] = useState(false);
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/" >
+        <Link to="#/" >
           <img src={logo} alt="logo kodingyuk" />
         </Link>
       </div>
@@ -33,10 +33,10 @@ function NavBar() {
         onClick={() => setIsMobile(false)}
       >
         <li>
-          <a href="/">Home</a>
-          <a href="/kelas">Kelas</a>
-          <a href="/about">About</a>
-          <a href="/blog">Blog</a>
+          <a href="#/">Home</a>
+          <a href="#/kelas">Kelas</a>
+          <a href="#/about">About</a>
+          <a href="#/blog">Blog</a>
         </li>
       </ul>
       <button
@@ -281,16 +281,25 @@ const App = () => {
                     <img src={mrtLogo} alt="logo MRT" />
                     <h2>Kelas Merakit Robot</h2>
                     <p>Mengajak anak-anak merakit robot dengan blok MRT.</p>
+                    <div className="container">
+                      <h3>8 - 10 Tahun</h3>
+                    </div>
                   </div>
                   <div className="kelas-animasi">
                     <img src={scratchLogo} alt="logo Scratch" />
                     <h2>Kelas Animasi Robotik</h2>
                     <p>Menggunakan platform visual Scratch yang ramah anak.</p>
+                    <div className="container">
+                      <h3>8 - 12 Tahun</h3>
+                    </div>
                   </div>
                   <div className="kelas-python">
                     <img src={pythonLogo} alt="logo Python" />
-                    <h2>Kelas Koding</h2>
+                    <h2>Kelas Koding Python</h2>
                     <p>Mempelajari dasar-dasar pemrograman Python.</p>
+                    <div className="container">
+                      <h3>12 - 18 Tahun</h3>
+                    </div>
                   </div>
                 </div>
               </main>
