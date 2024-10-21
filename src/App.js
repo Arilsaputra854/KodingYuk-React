@@ -1,9 +1,8 @@
 import logo from "./assets/logo.png";
 import woman from "./assets/woman.png";
-import picture1 from "./assets/picture_1.png";
 import picture2 from "./assets/picture_2.png";
-import picture3 from "./assets/picture_3.png";
 import picture4 from "./assets/picture_4.png";
+import picture4_2 from "./assets/picture_4_2.png";
 import picture5 from "./assets/picture_5.png";
 import picture6 from "./assets/picture_6.png";
 import picture7 from "./assets/picture_7.png";
@@ -28,7 +27,7 @@ function NavBar() {
           <img src={logo} alt="logo kodingyuk" />
         </Link>
       </div>
-      <ul
+      {/* <ul
         className={isMobile ? "navbar-links-mobile" : "navbar-links"}
         onClick={() => setIsMobile(false)}
       >
@@ -44,7 +43,7 @@ function NavBar() {
         onClick={() => setIsMobile(!isMobile)}
       >
         {isMobile ? <>&#10005;</> : <>&#9776;</>}
-      </button>
+      </button> */}
     </nav>
   );
 }
@@ -143,16 +142,25 @@ const App = () => {
                     <img src={mrtLogo} alt="logo MRT" />
                     <h2>Kelas Merakit Robot</h2>
                     <p>Mengajak anak-anak merakit robot dengan blok MRT.</p>
+                    <div className="container">
+                      <h3>8 - 10 Tahun</h3>
+                    </div>
                   </div>
                   <div className="kelas-animasi-mobile">
                     <img src={scratchLogo} alt="logo Scratch" />
                     <h2>Kelas Animasi Robotik</h2>
                     <p>Menggunakan platform visual Scratch yang ramah anak.</p>
+                    <div className="container">
+                      <h3>8 - 12 Tahun</h3>
+                    </div>
                   </div>
                   <div className="kelas-python-mobile">
                     <img src={pythonLogo} alt="logo Python" />
                     <h2>Kelas Koding</h2>
                     <p>Mempelajari dasar-dasar pemrograman Python.</p>
+                    <div className="container">
+                      <h3>8 - 10 Tahun</h3>
+                    </div>
                   </div>
                 </div>
               </main>
@@ -166,6 +174,7 @@ const App = () => {
                       Trainer akan datang ke rumah siswa untuk pembelajaran
                       langsung.
                     </p>
+                    
                   </div>
                   <div className="kelas-online-mobile">
                     <img src={picture7} alt="Online" />
@@ -236,7 +245,7 @@ const App = () => {
                   pada menggali potensi anak dalam bidang teknologi.  Kodingyuk membantu anak-anak memahami konsep teknologi secara mendalam, mempersiapkan mereka untuk menghadapi tantangan di masa depan.
                 </p>
                 <div className="foto-murid">
-                  <img src={picture4} alt="foto siswa" id="foto4" />
+                  <img src={picture4_2} alt="foto siswa" id="foto4" />
 
                   <img src={picture9} alt="foto siswa" id="foto9" />
                   
