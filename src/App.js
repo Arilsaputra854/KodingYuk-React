@@ -27,7 +27,7 @@ function NavBar() {
           <img src={logo} alt="logo kodingyuk" />
         </Link>
       </div>
-      {/* <ul
+      <ul
         className={isMobile ? "navbar-links-mobile" : "navbar-links"}
         onClick={() => setIsMobile(false)}
       >
@@ -43,7 +43,7 @@ function NavBar() {
         onClick={() => setIsMobile(!isMobile)}
       >
         {isMobile ? <>&#10005;</> : <>&#9776;</>}
-      </button> */}
+      </button>
     </nav>
   );
 }

@@ -28,7 +28,6 @@ html{
 
 .App-body{
   display: flex;
-  height: 100vh;
 }
 
 .headline{
@@ -195,7 +194,6 @@ html{
 }
 
 .App-about{
-  height: 100vh;
   margin-bottom: 100px;
   align-items: center;
   display: flex;
@@ -340,7 +338,6 @@ html{
 /*program*/
 
 .App-program{
-  height: 100vh;
   display: flex;
   text-align: center;
   background-image: url(assets/shape_left.png);
@@ -550,7 +547,6 @@ html{
 }
 
 .App-method{
-  height: 100vh;
   margin-top: 20px;
   display: flex;
   text-align: center;
@@ -721,7 +717,6 @@ html{
   background-size: 300px;
   background-repeat: no-repeat;
   flex-direction: column;
-  height: 100vh;
 }
 
 .App-registration h2{
@@ -769,6 +764,7 @@ html{
   display:inline-block;
   width: 25%;
   margin-top: 10%;
+  margin-bottom: 10%;
   align-self: center;
 }
 
